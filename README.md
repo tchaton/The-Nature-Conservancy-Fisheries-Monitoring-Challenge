@@ -41,11 +41,11 @@ In my implementation , the localisation part is really great ( I didn t evaluate
 I HAVE ADDED SOME PICTURES FOR BETTER UNDERSTANDING:
 
 1 ) ORIGNAL IMAGE
+
 ![](https://kaggle2.blob.core.windows.net/forum-message-attachments/169028/6120/Capture1.PNG)
 
 2 ) ONE OF THE INPUT IMAGES AFTER DATA AUGMENTATION I did only flip vertical / horizontal + add random normal noise on part where the fishes weren t -> decrease overfit on boats .
 
-![](https://kaggle2.blob.core.windows.net/forum-message-attachments/169028/6120/Capture1.PNG)
 ![](https://kaggle2.blob.core.windows.net/forum-message-attachments/169028/6121/Capture3.PNG)
 
 3.a) LEFT : full mask , RIGHT : weigths associated
