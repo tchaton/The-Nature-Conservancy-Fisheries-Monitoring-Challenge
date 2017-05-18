@@ -10,20 +10,20 @@ LOCALISATION
 
 # METHOD
 1 ) From an image -> Create 2 images of different size and add same augmentation of data process . (3,w,h) - > (3,w1,h1),(3,w2,h2) usually == (3,2*w1,2*h1) but as I modified Resnet architecture, it is not the case .
-Explanation
+## Explanation
 
 The inputs shape were [(3,768, 1216),(3,1344,2240)] and I got masks of shape [(1000,18, 32), (1000,36, 64)]. Thanks to UpSampling , I was able to merge them so my networks was able to detect fish from different size. Sliding window were [(224,224),(112,112)]
 
 2 ) Pass it thought a trained model as Resnet50 / VGG16 / VGG19 ( actually I cut it, and modified it in order to have the option "valid" on the AveragePooling2D.
 
 3 ) Map features of this trained network to 5 outputs . Let me explain it here. It is the hard part . The idea is to make the network learn where the fishes are . So we create 5 masks with the value 1 where the fishes are and 0 if not, associated with an equilibrated weight mask ( sum of value of 1 == sum of value of 0 == better learning, so mask of size 100*100 and only I have 1000 1 and 9000 0 , weight of 1 will be 9 and 0 will be 1 ) for the loss function . The 5 masks correspond to one full , one left , one top , one right and one right ( see pictures to understand ) .
-REFINEMENT
+## REFINEMENT
 
 4 ) Merge right+left -> rl Merge top + bottom -> tp Merge full + rl + tp -> new full
-SOFT-ATTENTION
+## SOFT-ATTENTION
 
 5 ) multiply(new_full, Map features) # The features express only where the fishes are , the rest is at almost 0 thanks to soft-attention .
-CLASSIFICATION
+## CLASSIFICATION
 
 6 ) We use the features from soft-attention to make a prediction
 NETWORK OUTPUTS
@@ -33,7 +33,7 @@ LOSS FUNCTION
 
 I used "mse" to make mask convergence faster. And after , I tried to use [8*mse + categorical_crossentropy ]
 
-#Conclusion :
+## Conclusion :
 COMMENTS
 
 In my implementation , the localisation part is really great ( I didn t evaluate it but I evaluate it was able to find the fishes between 70%-90% of the times + able to find several fishes on unseen pictures ). But the network wasn t able to learn the classification part ( I might I have mixed things there ).
