@@ -82,6 +82,9 @@ Here are some results:
 ![](https://kaggle2.blob.core.windows.net/forum-message-attachments/169040/6127/Capture10.PNG)
 ![](https://kaggle2.blob.core.windows.net/forum-message-attachments/169040/6128/Capture9.PNG)
 
+Or u can see them at the end in this notebooks for example : https://github.com/tchaton/The-Nature-Conservancy-Fisheries-Monitoring-Challenge/blob/master/fish/Classif%20network%20heatmaps.ipynb
+
+
 # NOTEBOOKS
 
 The fish directory juste need to have a directory with test and train to work (I hope)
