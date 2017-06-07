@@ -27,8 +27,7 @@ Put as much weight on 0 than 1. If my mask is [[1,0],[0,0]], my weight_mask will
 # Really magic TRICK 2 
 Allow the network to take more than the fish but prevent him to go far. As you can see in the images below. We have put a red security for the network to learn where to stop with the fishes, but let him the liberty to go further than the true rectangle.
 
-But also to allow a band without any values inside of it.
-
+Add a blue lines of 0 in the middle to help the network to predict better segmented true rectangles (right, left, top, bottom).
 ## REFINEMENT
 
 4 ) This part is interesting : 
