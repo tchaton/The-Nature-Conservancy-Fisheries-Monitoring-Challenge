@@ -4,6 +4,8 @@ Hi there,
 
 I have finished to code a complex deep neural network doing localisation _ kind of refinement _ sotft-attention _ classification . (It came after several hundreds of work hour, and It was my real first deep learning experience). I have imagined it and I think it might be interesting for you to see it. The localisation part was firstly inspired from a Google paper but I improved it ( when ideas came ).
 
+Here is the link towards it : Deep Neural Networks for Object Detection https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiluZbV66zUAhWMJMAKHZ0YAZwQFggnMAA&url=https%3A%2F%2Fpdfs.semanticscholar.org%2F713f%2F73ce5c3013d9fb796c21b981dc6629af0bd5.pdf&usg=AFQjCNF79vro3uwWMO53Sqh9Imh62uCl_A&sig2=s99ID2DpzYzbZq8DOkvmAg
+
 ![](https://kaggle2.blob.core.windows.net/forum-message-attachments/169028/6119/Capture.PNG)
 The main ideas are the next ones ( I used KERAS to code it ):
 LOCALISATION
@@ -24,6 +26,8 @@ Put as much weight on 0 than 1. If my mask is [[1,0],[0,0]], my weight_mask will
 
 # Really magic TRICK 2 
 Allow the network to take more than the fish but prevent him to go far. As you can see in the images below. We have put a red security for the network to learn where to stop with the fishes, but let him the liberty to go further than the true rectangle.
+
+But also to allow a band without any values inside of it.
 
 ## REFINEMENT
 
