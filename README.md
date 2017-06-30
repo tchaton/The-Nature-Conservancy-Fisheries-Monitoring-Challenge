@@ -30,6 +30,7 @@ Allow the network to take more than the fish but prevent him to go far. As you c
 Add a blue lines of 0 in the middle to help the network to predict better segmented true rectangles (right, left, top, bottom).
 ## REFINEMENT
 
+
 4 ) This part is interesting : 
 As we have right,top,left,bottom and full of the true mask. We had in idea, we might have better results if he learn to the network to extrapolate fron right and left to recompose the full, same with top and bottom. And recombine the 3 created masks (the full, extrapolated(left,right),extrapolated(top,bottom)) to reform a better full mask.
 
